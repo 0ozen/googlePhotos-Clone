@@ -5,12 +5,10 @@ export default function LateralBar() {
 	return (
 		<div className={styles.lateralBar}>
 			<div role="navigation">
-				<div >
+				<div>
 					<div className={styles.nav}>
 						<div className={styles.links}>
-							<a		
-								href="./"
-								aria-label="Todas las fotos">
+							<a href="./" aria-label="Todas las fotos">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7l-3 3.72L9 13l-3 4h12l-4-5z"></path>
@@ -20,14 +18,9 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a
-								href="./explore"
-								aria-label="Explorar">
+							<a href="./explore" aria-label="Explorar">
 								<div className={styles.icons}>
-									<svg
-										width="24px"
-										height="24px"
-										viewBox="0 0 24 24">
+									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5A6.5 6.5 0 1 0 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z"></path>
 									</svg>
 									<div className={styles.JBVD2d}>
@@ -51,10 +44,7 @@ export default function LateralBar() {
 						</div>
 						<div className={styles.section2}>Biblioteca</div>
 						<div className={styles.links}>
-							<a
-								tabindex="0"
-								href="./search/_m8_Favoritos"
-								aria-label="Favoritos">
+							<a href="./search/_m8_Favoritos" aria-label="Favoritos">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"></path>
@@ -64,7 +54,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a tabindex="0" href="./albums">
+							<a href="./albums">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H6V4h6v7l2.5-1.88L17 11V4h1v16zm-4.33-6L17 18H7l2.5-3.2 1.67 2.18 2.5-2.98z"></path>
@@ -74,7 +64,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a tabindex="0" href="./managelibrary" aria-label="Utilidades">
+							<a href="./managelibrary" aria-label="Utilidades">
 								<div className={styles.icons}>
 									<div>
 										<svg width="24px" height="24px" viewBox="0 0 24 24">
@@ -86,7 +76,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a tabindex="0" href="./archive" aria-label="Archivo">
+							<a href="./archive" aria-label="Archivo">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM6.24 5h11.52l.83 1H5.42l.82-1zM5 19V8h14v11H5zm8-5.35V9.5h-2v4.15l-1.79-1.79-1.42 1.41L12 17.48l4.21-4.21-1.42-1.41z"></path>
@@ -96,7 +86,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a tabindex="0" href="./trash" aria-label="Papelera">
+							<a href="./trash" aria-label="Papelera">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M15 4V3H9v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5zm2 15H7V6h10v13zM9 8h2v9H9zm4 0h2v9h-2z"></path>
@@ -107,7 +97,7 @@ export default function LateralBar() {
 								</div>
 							</a>
 						</div>
-            <div className={styles.optionDiv}></div>
+						<div className={styles.optionDiv}></div>
 						<div className={styles.links}>
 							<a href="./settings" aria-label="Configuración">
 								<div className={styles.icons}>
@@ -120,10 +110,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a
-								role="button"
-								href="https://support.google.com/photos"
-								aria-label="Ayuda y comentarios">
+							<a role="button" href="#" aria-label="Ayuda y comentarios">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
@@ -133,7 +120,7 @@ export default function LateralBar() {
 									</div>
 								</div>
 							</a>
-							<a tabindex="0" aria-label="Descarga la aplicación">
+							<a aria-label="Descarga la aplicación">
 								<div className={styles.icons}>
 									<svg width="24px" height="24px" viewBox="0 0 24 24">
 										<path d="M5 6h16V4H5c-1.1 0-2 .9-2 2v11H1v3h11v-3H5V6zm16 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path>
@@ -150,7 +137,7 @@ export default function LateralBar() {
 						<div>
 							<a
 								aria-label="Privacidad"
-								href="https://policies.google.com/privacy?hl=es"
+								href="#Privacidad"
 								target="_blank"
 								role="button">
 								Privacidad
@@ -160,7 +147,7 @@ export default function LateralBar() {
 						<div>
 							<a
 								aria-label="Términos"
-								href="https://policies.google.com/terms?hl=es"
+								href="#terms"
 								target="_blank"
 								role="button">
 								Términos
@@ -170,7 +157,7 @@ export default function LateralBar() {
 						<div>
 							<a
 								aria-label="Política"
-								href="https://support.google.com/photos/answer/9292998?hl=es"
+								href="#answer/9292998?hl=es"
 								target="_blank"
 								role="button">
 								Política

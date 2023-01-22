@@ -10,7 +10,7 @@ export default function Home() {
 	const [moreInfo, setMoreInfo] = useState(false);
 	const profileInfo = useRef<HTMLDivElement>(null);
 	const profileImg = useRef<HTMLImageElement>(null);
-	const [image, setImg] = useState("");
+	const [images, setImg] = useState("");
 
 	typeof window !== "undefined"
 		? document.addEventListener("click", function (e) {
@@ -40,15 +40,15 @@ export default function Home() {
 			};
 		}
 
-		if (user) {
-			//npm i multer
-			const newUser: any = { user: user?.email, image: image };
-			const res = await fetch("/api/upload", {
-				method: "POST",
-				body: JSON.stringify(newUser),
-			});
-			if (res.status && res.status === 201) console.log("subido");
-		}
+		// if (user) {
+		// 	npm i multer
+		// 	const newUser: any = { user: user?.email, image: image };
+		// 	const res = await fetch("/api/upload", {
+		// 		method: "POST",
+		// 		body: JSON.stringify(newUser),
+		// 	});
+		// 	if (res.status && res.status === 201) console.log("subido");
+		// }
 	};
 
 	return (
@@ -81,7 +81,7 @@ export default function Home() {
 							<code className={styles.code}>Clone</code>
 						</a>
 						<div className={styles.searchIcon}>
-							<span class="material-symbols-outlined">search</span>
+							<span className="material-symbols-outlined">search</span>
 
 							<input type="text" placeholder="Buscar fotos" />
 						</div>
@@ -90,7 +90,7 @@ export default function Home() {
 						<form encType="multipart/form-data">
 							<label>
 								<div className={styles.subir}>
-									<span class="material-symbols-outlined">upload</span>
+									<span className="material-symbols-outlined">upload</span>
 									Subir
 								</div>
 
@@ -106,13 +106,13 @@ export default function Home() {
 						</form>
 
 						<button>
-							<span class="material-symbols-outlined">help</span>
+							<span className="material-symbols-outlined">help</span>
 						</button>
 						<button>
-							<span class="material-symbols-outlined">settings</span>
+							<span className="material-symbols-outlined">settings</span>
 						</button>
 						<button>
-							<span class="material-symbols-outlined">apps</span>
+							<span className="material-symbols-outlined">apps</span>
 						</button>
 						{user && (
 							<div className={styles.loginButton}>
@@ -171,7 +171,10 @@ export default function Home() {
 				</div>
 				<div className={styles.galleryContainer}>
 					<div className={styles.gallery}>
-						<Images link="https://picsum.photos/v2/list?page=4&limit=10" />
+						<Images
+							link="https://picsum.photos/v2/list?page=5&limit=9"
+							newImagen={images}
+						/>
 					</div>
 				</div>
 			</main>
