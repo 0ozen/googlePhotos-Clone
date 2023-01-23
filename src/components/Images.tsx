@@ -4,34 +4,35 @@ import Gallery from "react-photo-gallery-next";
 import OpenGallery from "./OpenGallery";
 import SelectedImage from "./SelectedImage";
 
-export default function Images({ link, newImagen }) {
+export default function Images({ link = "", newImagen = "" }) {
 	const [images, setImages] = useState([]);
-	const [image, setSelectImage] = useState([{}, { open: false }]);
+	const [image, setSelectImage] = useState([{ src: "", width: 0, height: 0 }]);
+	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		fetch(link)
 			.then((res) => res.json())
 			.then((images) => {
-				const newImages = images.map(({ download_url, width, height }) => {
-					return {
-						src: download_url,
-						width: (width * 0.1) | 0,
-						height: (height * 0.1) | 0,
-					};
-				});
+				const newImages = images.map(
+					({ download_url = "", width = 1, height = 1 }) => {
+						return {
+							src: download_url,
+							width: (width * 0.1) | 0,
+							height: (height * 0.11) | 0,
+						};
+					}
+				);
 
 				setImages(newImages);
 			});
 	}, []);
 
-	const imageRenderer = ({ photo }) => (
-		<SelectedImage photo={photo} setImage={setSelectImage} />
-	);
+	const imageRenderer = ({ photo }) => {
+    return <SelectedImage photo={photo} setSelectImage={setSelectImage} setOpen={setOpen} />
+  }
 
 	const handleClose = () => {
-		const close = [...image];
-		close[1].open = false;
-		setSelectImage(close);
+		setOpen(false)
 	};
 
 	// useEffect(() => {
@@ -42,11 +43,7 @@ export default function Images({ link, newImagen }) {
 	return (
 		<div>
 			<div>
-				<OpenGallery
-					open={image[1].open}
-					image={[image[0]]}
-					handleClose={handleClose}
-				/>
+				<OpenGallery open={open} image={image} handleClose={handleClose} />
 			</div>
 
 			<Gallery photos={images} renderImage={imageRenderer} />

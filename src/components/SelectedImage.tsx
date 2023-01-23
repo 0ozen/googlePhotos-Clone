@@ -1,17 +1,22 @@
-const SelectedImage = ({ photo, setImage }) => {
-	const SelectImage = () => {
-		setImage([
+const SelectedImage = ({ photo, setOpen, setSelectImage }) => {
+	
+  const SelectImage = () => {
+		setSelectImage([
 			{
 				src: photo.src,
 				width: photo.width,
-				heigth: photo.height,
+				height: photo.height,
 			},
-			{ open: true },
 		]);
 	};
 
+	const showImage = () => {
+		SelectImage();
+		setOpen(true);
+	};
+
 	return (
-		<div onClick={() => SelectImage()} className="imageCont">
+		<div onClick={() => showImage()} className="imageCont">
 			<img className="image" alt={photo.title} {...photo} />
 			<span className="hoverImage"></span>
 			<style>{` 

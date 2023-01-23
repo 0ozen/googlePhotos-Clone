@@ -11,12 +11,17 @@
 	top: 64px;
 	transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 	width: 256px;
-	z-index: 1;
+	z-index: 3;
 	padding: 24px 0;
 	padding-bottom: 0;
 	color: rgb(60, 64, 67);
 }
-
+.navCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .links a {
 	align-items: center;
 	-ms-flex-align: center;

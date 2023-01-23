@@ -82,15 +82,17 @@ a {
 	background-color: rgb(180, 180, 180);
 }
 
+.react-google-photo-overlay{
+  z-index: 10 !important;
+}
+
 .react-google-photo-overlay > div:nth-of-type(1) {
 	width: 100vw !important;
 	height: 100vh !important;
 	left: 0 !important;
+  top: 0 !important;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.react-google-photo-overlay div img {
-	max-width: 70% !important;
-	height: auto !important;
-}
+
