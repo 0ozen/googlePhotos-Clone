@@ -11,6 +11,8 @@ export default function Home() {
 	const profileInfo = useRef<HTMLDivElement>(null);
 	const profileImg = useRef<HTMLImageElement>(null);
 	const [images, setImg] = useState("");
+	const [showBar, setShowBar] = useState(false);
+	const [showInput, setShowInput] = useState(false);
 
 	typeof window !== "undefined"
 		? document.addEventListener("click", function (e) {
@@ -39,7 +41,6 @@ export default function Home() {
 				setImg(event.target.result);
 			};
 		}
-
 		// if (user) {
 		// 	npm i multer
 		// 	const newUser: any = { user: user?.email, image: image };
@@ -49,6 +50,14 @@ export default function Home() {
 		// 	});
 		// 	if (res.status && res.status === 201) console.log("subido");
 		// }
+	};
+
+	const showMenu = () => {
+		setShowBar(!showBar);
+	};
+
+	const showSearch = () => {
+		setShowInput(!showInput);
 	};
 
 	return (
@@ -76,22 +85,41 @@ export default function Home() {
 			<main className={styles.main}>
 				<nav className={styles.nav}>
 					<div className={styles.logo}>
-						<a href="/">
-							GooglePhotos&nbsp;
-							<code className={styles.code}>Clone</code>
-						</a>
-						<div className={styles.searchIcon}>
-							<span className="material-symbols-outlined">search</span>
-
-							<input type="text" placeholder="Buscar fotos" />
+						<div className={styles.name}>
+							<span
+								className={`material-symbols-outlined ${styles.menu}`}
+								onClick={showMenu}>
+								menu
+							</span>
+							<a href="/">
+								GooglePhotos&nbsp;
+								<code className={styles.code}>Clone</code>
+							</a>
 						</div>
+					</div>
+					<div
+						className={`${styles.searchIcon} ${
+							showInput && styles.showSearch
+						}`}>
+						<span className="material-symbols-outlined" onClick={showSearch}>
+							search
+						</span>
+
+						<span className={styles.back} onClick={showSearch}>
+							<svg width="24px" height="24px" viewBox="0 0 24 24">
+								<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+							</svg>
+						</span>
+
+						<input type="text" placeholder="Buscar fotos" />
 					</div>
 					<div className={styles.description}>
 						<form encType="multipart/form-data">
-							<label>
+							<label htmlFor="photos">
 								<div className={styles.subir}>
 									<span className="material-symbols-outlined">upload</span>
-									Subir
+
+									<label htmlFor="photos">Subir</label>
 								</div>
 
 								<input
@@ -105,10 +133,10 @@ export default function Home() {
 							</label>
 						</form>
 
-						<button>
+						<button className={styles.help}>
 							<span className="material-symbols-outlined">help</span>
 						</button>
-						<button>
+						<button className={styles.set}>
 							<span className="material-symbols-outlined">settings</span>
 						</button>
 						<button>
@@ -166,9 +194,9 @@ export default function Home() {
 						</div>
 					</div>
 				</nav>
-				<div>
-					<LateralBar></LateralBar>
-				</div>
+
+				<LateralBar showBar={showBar}></LateralBar>
+
 				<div className={styles.galleryContainer}>
 					<div className={styles.gallery}>
 						<Images

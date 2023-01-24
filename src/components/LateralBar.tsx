@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/styles/LateralBar.module.css";
 
-export default function LateralBar() {
+export default function LateralBar({ showBar }) {
 	return (
-		<div className={styles.lateralBar}>
+		<div className={`${styles.lateralBar} ${showBar && styles.showBar}`}>
 			<div className={styles.navCont} role="navigation">
 				<div className={styles.nav}>
 					<div className={styles.links}>
@@ -42,6 +42,8 @@ export default function LateralBar() {
 						</div>
 					</div>
 					<div className={styles.section2}>Biblioteca</div>
+					<div className={styles.optionDiv2}></div>
+
 					<div className={styles.links}>
 						<a href="./search/_m8_Favoritos" aria-label="Favoritos">
 							<div className={styles.icons}>

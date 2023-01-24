@@ -3,20 +3,17 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	min-height: 100vh;
 }
 
 .description {
 	display: flex;
-	gap: 3px;
 	font-size: 0.85rem;
 	max-width: var(--max-width);
-	width: 45%;
+	width: 100%;
 	height: 4rem;
 	font-family: var(--font-mono);
 	align-items: center;
 	justify-content: flex-end;
-	padding: 5px 15px;
 }
 
 .description button {
@@ -119,8 +116,10 @@
 	width: 100%;
 	max-height: 4rem;
 	align-items: center;
-	border-bottom: 1px solid rgb(218, 220, 224);
+  user-select: none;
+  border-bottom: 1px solid rgb(218, 220, 224);
 }
+
 
 .btn,
 .btn *,
@@ -212,6 +211,7 @@
 	right: 2rem;
 	width: 350px;
 	height: 400px;
+	max-height: 80vh;
 	padding: 1rem;
 	border: 1px solid rgb(60 64 67 / 30%);
 	box-shadow: 0px 1px 2px 0px rgb(60 64 67 / 30%),
@@ -247,28 +247,25 @@
 	font-family: var(--font-mono);
 }
 
-.card {
-	padding: 1rem 1.2rem;
-	border-radius: var(--border-radius);
-	background: rgba(var(--card-rgb), 0);
-	border: 1px solid rgba(var(--card-border-rgb), 0);
-	transition: background 200ms, border 200ms;
-}
-
 .logo {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 100%;
 }
 
+.name {
+	width: 252px;
+}
 .logo a {
 	width: max-content;
-	margin: 0 15px;
-	margin-right: 110px;
+	margin-left: 15px;
 }
 
 .logo div {
+	display: flex;
+	align-items: center;
+}
+.searchIcon {
 	background: rgb(241, 243, 244);
 	border-radius: 8px;
 	display: flex;
@@ -282,12 +279,7 @@
 	max-width: 720px;
 }
 
-.logo div p {
-	color: rgb(95, 99, 104);
-	margin: 12px 16px;
-	vertical-align: top;
-}
-.logo input {
+.searchIcon input {
 	background: none;
 	border: none;
 	flex-grow: 1;
@@ -304,7 +296,7 @@
 	font-weight: 500;
 }
 
-.logo div:focus-within {
+.searchIcon:focus-within {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
 }
@@ -315,11 +307,103 @@
 	position: absolute;
 	top: 6rem;
 	margin-left: 270px;
-	max-height: calc(100vh - 6rem);
+	max-width: calc(100vw - 300px);
+	max-height: calc(100vh - 8rem);
 	overflow-y: hidden;
 }
 
 .gallery {
 	width: 100%;
 	overflow-y: scroll;
+}
+
+.menu {
+	font-size: 24px;
+	width: 48px;
+	height: 48px;
+	padding: 12px 24px;
+	display: none;
+  cursor: pointer;
+}
+.back{
+  fill: rgb(95, 99, 104);
+  display: none;
+}
+.showSearch{
+  position: absolute;
+  width: 100%;
+  background-color: #fff !important;
+  max-width: 100%;
+  z-index: 10;
+  justify-content: center;
+  border: 1px solid gainsboro;
+}
+.showSearch span{
+  display: none;
+}
+.showSearch .back{
+  display: initial;
+}
+.showSearch input{
+  display: initial !important;
+}
+
+@media (width <= 1000px) {
+	.menu {
+		display: initial;
+	}
+	.searchIcon {
+		flex: 0;
+		background-color: transparent;
+	}
+	.searchIcon span {
+    cursor: pointer;
+	}
+	.searchIcon input {
+		display: none;
+	}
+	.galleryContainer {
+		margin-left: 72px;
+		max-width: calc(100vw - 100px);
+	}
+	.subir {
+		padding: 0;
+	}
+	.description {
+		width: max-content;
+	}
+	.description label {
+		display: none;
+	}
+	.logo {
+		width: 100%;
+	}
+}
+@media (width <= 700px) {
+  .login,
+  .loginButton,
+  .logo code {
+    display: none;
+  }
+}
+@media (width <= 600px) {
+	.logo code {
+		display: none;
+	}
+	.help,
+	.set {
+		display: none !important;
+	}
+	.galleryContainer {
+		margin-left: 0;
+		max-width: 100vw;
+	}
+	.searchIcon {
+		margin-left: 0;
+	}
+}
+@media (width <= 400px) {
+	.logo .name {
+		width: min-content;
+	}
 }
