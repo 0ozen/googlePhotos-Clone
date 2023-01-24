@@ -86,10 +86,13 @@ export default function Home() {
 				<nav className={styles.nav}>
 					<div className={styles.logo}>
 						<div className={styles.name}>
-							<span
-								className={`material-symbols-outlined ${styles.menu}`}
-								onClick={showMenu}>
-								menu
+							<span className={`${styles.menu}`} onClick={showMenu}>
+								<svg
+									width="24px"
+									height="24px"
+									viewBox="0 0 24 24">
+									<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+								</svg>
 							</span>
 							<a href="/">
 								GooglePhotos&nbsp;
