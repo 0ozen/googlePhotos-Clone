@@ -32,6 +32,9 @@
 .description button:hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
+.description label{
+  cursor: pointer;
+}
 
 .subir {
   border: none;
