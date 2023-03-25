@@ -1,0 +1,155 @@
+.lateralBar {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	background-color: rgb(255, 255, 255);
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	top: 64px;
+	transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	width: 256px;
+	height: 100%;
+	z-index: 3;
+	padding: 24px 0;
+	padding-bottom: 0;
+	color: rgb(60, 64, 67);
+	max-height: calc(100vh - 4rem);
+  user-select: none;
+}
+.navCont {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+.links a {
+	align-items: center;
+	-ms-flex-align: center;
+	border-radius: 0 24px 24px 0;
+	cursor: pointer;
+	display: flex;
+	line-height: 20px;
+	margin-right: 24px;
+	padding: 8px 12px 8px 24px;
+	transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+		margin-left 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+		padding 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+		width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	flex-direction: row;
+	width: 100%;
+}
+
+.lateralBar a:hover {
+	fill: rgb(26, 115, 232);
+	color: rgb(26, 115, 232);
+	background-color: rgb(241, 243, 244);
+}
+
+.lateralBar a div {
+	display: flex;
+	align-items: center;
+}
+
+.HksvWb {
+	max-height: 24px;
+	min-width: 124px;
+}
+
+.HksvWb {
+	color: rgb(60, 64, 67);
+	display: flex;
+	padding-left: 24px !important;
+	flex: 1;
+	word-break: break-all;
+	word-break: break-word;
+	word-wrap: break-word;
+	align-items: center;
+	font-family: "Google Sans", Roboto, Arial, sans-serif;
+	line-height: 1.25rem;
+	font-size: 0.9rem;
+	letter-spacing: 0.02em;
+	font-weight: 500;
+	justify-content: space-between;
+}
+
+.section2 {
+	color: rgb(128, 134, 139);
+	margin: 12px 0;
+	padding-bottom: 0;
+	padding-left: 24px;
+	font-family: Roboto, Arial, sans-serif;
+	line-height: 1rem;
+	font-size: 0.7rem;
+	letter-spacing: 0.07em;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.icons {
+	fill: rgb(95, 99, 104);
+	flex-shrink: 0;
+}
+
+.optionDiv {
+	background-color: rgb(218, 220, 224);
+	height: 1px;
+	margin: 19px 24px 20px;
+}
+
+.optionDiv2 {
+	background-color: rgb(218, 220, 224);
+	height: 1px;
+	margin: 19px 24px 20px;
+}
+
+.nav {
+	margin-bottom: 3rem;
+}
+
+.footer {
+	font-family: Roboto, Arial, sans-serif;
+	line-height: 1rem;
+	font-size: 0.75rem;
+	letter-spacing: 0.025em;
+	font-weight: 400;
+	color: rgb(95, 99, 104);
+	padding: 17px 24px 24px;
+	display: flex;
+}
+
+.showBar{
+  display: initial !important;
+}
+.showBar,
+.showBar * {
+	width: auto !important;
+}
+
+@media (width > 1000px) {
+	.optionDiv2 {
+		display: none;
+	}
+}
+
+@media (width <= 1000px) {
+	.lateralBar,
+	.lateralBar * {
+		transition: box-shadow 0.15s linear,
+			width 0.15s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.15s linear;
+		width: 72px;
+		overflow-x: hidden;
+	}
+	.footer,
+	.section2 {
+		display: none;
+	}
+}
+
+@media (width <= 600px) {
+	.lateralBar {
+		display: none;
+	}
+}
